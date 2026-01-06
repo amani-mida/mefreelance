@@ -28,9 +28,11 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 text-white"
+      className="py-24 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 text-white relative overflow-hidden"
       ref={ref}
     >
+      {/* Grille subtile */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:50px_50px]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,12 +40,12 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Travaillons <span className="text-primary-400">ensemble</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            Travaillons ensemble
           </h2>
           <p className="text-xl text-dark-300 max-w-2xl mx-auto">
-            Vous avez un projet en tête ? Discutons-en et créons quelque chose
-            d'extraordinaire !
+            Vous avez un projet digital ? Discutons de vos besoins et créons une solution
+            sur mesure pour votre entreprise !
           </p>
         </motion.div>
 
@@ -55,8 +57,8 @@ export default function Contact() {
         >
           <h3 className="text-2xl font-bold mb-6 text-center">Informations de contact</h3>
           <p className="text-dark-300 mb-8 text-center">
-            N'hésitez pas à me contacter pour discuter de votre projet ou
-            simplement pour échanger. Je réponds généralement sous 24h.
+            N'hésitez pas à nous contacter pour discuter de votre projet ou
+            demander un devis. Nous répondons généralement sous 24h.
           </p>
 
           <div className="space-y-6 mb-8">
@@ -83,13 +85,25 @@ export default function Contact() {
             })}
           </div>
 
-          <div className="bg-gradient-to-r from-primary-600 to-primary-400 rounded-xl p-6 text-center">
-            <h4 className="font-bold mb-2">Disponibilité</h4>
-            <p className="text-sm opacity-90">
-              Actuellement disponible pour de nouveaux projets passionnants.
-              Réponse garantie sous 24h.
-            </p>
-          </div>
+          <motion.div 
+            className="bg-primary-500 rounded-xl p-6 text-center relative overflow-hidden group"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.div
+              className="absolute inset-0 bg-white/10"
+              initial={{ x: "-100%" }}
+              whileHover={{ x: "100%" }}
+              transition={{ duration: 0.6 }}
+            />
+            <div className="relative z-10">
+              <h4 className="font-bold mb-2">Disponibilité</h4>
+              <p className="text-sm opacity-90">
+                Nous sommes disponibles pour accompagner vos nouveaux projets digitaux.
+                Devis gratuit sous 24h.
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

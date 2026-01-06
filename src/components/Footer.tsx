@@ -14,12 +14,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">
-              Mifreelance
-            </h3>
+            <img
+              src="/images/logo/logo.png"
+              alt="Midigitale"
+              className="h-10 w-auto mb-4"
+            />
             <p className="text-dark-300">
-              Développeuse web passionnée créant des expériences digitales
-              exceptionnelles.
+              Agence digitale spécialisée dans la création de solutions web modernes 
+              et performantes pour votre transformation digitale.
             </p>
           </div>
 
@@ -33,13 +35,18 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#services" className="text-dark-300 hover:text-primary-400 transition-colors">
+                  Services
+                </a>
+              </li>
+              <li>
                 <a href="#skills" className="text-dark-300 hover:text-primary-400 transition-colors">
-                  Compétences
+                  Technologies
                 </a>
               </li>
               <li>
                 <a href="#projects" className="text-dark-300 hover:text-primary-400 transition-colors">
-                  Projets
+                  Réalisations
                 </a>
               </li>
               <li>
@@ -72,7 +79,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-dark-700 mt-8 pt-8 text-center text-dark-400">
-          <p>&copy; {new Date().getFullYear()} Mifreelance. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} Midigitale. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

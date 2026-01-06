@@ -303,7 +303,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-24 bg-white"
+      className="py-24 bg-white relative overflow-hidden"
       ref={ref}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -313,11 +313,11 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Mes <span className="text-gradient">projets</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-dark-900">
+            Nos réalisations
           </h2>
           <p className="text-xl text-dark-600 max-w-2xl mx-auto">
-            Découvrez une sélection de mes réalisations récentes
+            Découvrez une sélection de nos projets récents réalisés pour nos clients
           </p>
         </motion.div>
 
@@ -348,7 +348,7 @@ export default function Projects() {
                   {activeTab === category.id && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute inset-0 bg-gradient-primary rounded-full"
+                      className="absolute inset-0 bg-primary-500 rounded-full"
                       transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                     />
                   )}
@@ -393,9 +393,9 @@ export default function Projects() {
                   >
                     <div
                       className="w-full h-full bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110 cursor-pointer"
-                      style={{ backgroundImage: `url(${project.image})` }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  style={{ backgroundImage: `url(${project.image})` }}
+                />
+                    <div className="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
                       <div className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-2 text-sm font-medium text-dark-900">
                         <ExternalLink size={16} />
@@ -412,7 +412,7 @@ export default function Projects() {
                       className="w-full h-full bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110"
                       style={{ backgroundImage: `url(${project.image})`, minHeight: '192px' }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
                       <div className="bg-orange-500/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium text-white">
                         {project.category === 'app-mobile' ? 'En construction' : (project.images && project.images.length > 0 ? 'Voir la galerie' : 'En construction')}

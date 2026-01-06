@@ -1,6 +1,6 @@
-# Portfolio Développeuse Web
+# Midigitale - Agence Digital
 
-Un portfolio moderne et élégant construit avec Next.js 16, TypeScript, Tailwind CSS et Framer Motion.
+Site web moderne et élégant pour une agence digitale spécialisée dans la création de solutions web, applications mobiles et transformation digitale. Construit avec Next.js 16, TypeScript, Tailwind CSS et Framer Motion.
 
 ## 🚀 Fonctionnalités
 
@@ -40,7 +40,7 @@ Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 ## 📁 Structure du projet
 
 ```
-mifreelance/
+midigitale/
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx      # Layout principal
@@ -50,11 +50,14 @@ mifreelance/
 │       ├── Navbar.tsx      # Navigation
 │       ├── Footer.tsx      # Pied de page
 │       └── sections/
-│           ├── Hero.tsx    # Section héro
-│           ├── About.tsx   # Section à propos
-│           ├── Skills.tsx  # Section compétences
-│           ├── Projects.tsx # Section projets
-│           └── Contact.tsx  # Section contact
+│           ├── Hero.tsx          # Section héro
+│           ├── About.tsx         # Section à propos
+│           ├── Services.tsx      # Section services
+│           ├── Skills.tsx        # Section technologies
+│           ├── Methodology.tsx   # Section méthodologie
+│           ├── Projects.tsx      # Section réalisations
+│           ├── Testimonials.tsx  # Section témoignages
+│           └── Contact.tsx       # Section contact
 ├── public/                 # Fichiers statiques
 ├── package.json
 ├── tsconfig.json

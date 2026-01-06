@@ -60,7 +60,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-24 bg-gradient-to-br from-dark-50 to-primary-50"
+      className="py-24 bg-dark-50"
       ref={ref}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,11 +70,11 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Mes <span className="text-gradient">compétences</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-dark-900">
+            Nos technologies
           </h2>
           <p className="text-xl text-dark-600 max-w-2xl mx-auto">
-            Technologies et outils que je maîtrise pour créer des solutions performantes
+            Technologies et outils que nous maîtrisons pour créer des solutions performantes
           </p>
         </motion.div>
 
@@ -124,7 +124,7 @@ export default function Skills() {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <h3 className="text-2xl font-bold text-center mb-8 text-dark-900">
-            Technologies que j'utilise
+            Stack technologique
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {technologies.map((tech, index) => (

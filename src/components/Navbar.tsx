@@ -7,8 +7,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 const navItems = [
   { name: 'Accueil', href: '#home' },
   { name: 'À propos', href: '#about' },
-  { name: 'Compétences', href: '#skills' },
-  { name: 'Projets', href: '#projects' },
+  { name: 'Services', href: '#services' },
+  { name: 'Réalisations', href: '#projects' },
   { name: 'Contact', href: '#contact' },
 ]
 
@@ -25,10 +25,14 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    // debut de la navigation
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-dark-100'
           : 'bg-transparent'
       }`}
     >
@@ -37,11 +41,15 @@ export default function Navbar() {
           {/* Logo */}
           <motion.a
             href="#home"
-            className="text-2xl font-bold text-gradient"
+            className="flex items-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Mifreelance
+            <img
+              src="/images/logo/logo.png"
+              alt="Midigitale"
+              className="h-20 w-auto"
+            />
           </motion.a>
 
           {/* Desktop Menu */}
@@ -64,7 +72,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Me contacter
+              Nous contacter
             </motion.a>
           </div>
 
@@ -110,13 +118,14 @@ export default function Navbar() {
                 className="block px-6 py-2 bg-gradient-primary text-white rounded-full font-medium text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Me contacter
+                Nous contacter
               </a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
+    // NAVIGATION END
   )
 }
 
