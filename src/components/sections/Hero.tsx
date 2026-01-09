@@ -1,25 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Sparkles } from 'lucide-react'
-import { useEffect, useState } from 'react'
-
-const services = ['Sites Web', 'Applications Web', 'Applications Mobiles', 'Dashboards']
+import { ArrowDown } from 'lucide-react'
 
 export default function Hero() {
-  const [currentService, setCurrentService] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentService((prev) => (prev + 1) % services.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
 
   return (
     <section
       id="home"
-      className="mi-mobile-padding min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="mi-mobile-padding min-h-screen flex items-center justify-center relative overflow-hidden py-20 sm:py-0"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -56,7 +45,7 @@ export default function Hero() {
         
         {/* Formes géométriques animées très subtiles */}
         <motion.div
-          className="absolute top-20 left-10 w-96 h-96 bg-primary-500/10 rounded-full filter blur-3xl"
+          className="absolute top-20 left-4 sm:left-10 w-48 h-48 sm:w-96 sm:h-96 bg-primary-500/10 rounded-full filter blur-3xl"
           animate={{
             x: [0, 30, 0],
             y: [0, -20, 0],
@@ -69,7 +58,7 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-primary-500/10 rounded-full filter blur-3xl"
+          className="absolute bottom-20 right-4 sm:right-10 w-48 h-48 sm:w-96 sm:h-96 bg-primary-500/10 rounded-full filter blur-3xl"
           animate={{
             x: [0, -30, 0],
             y: [0, 20, 0],
@@ -92,7 +81,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-4"
           >
             <motion.span 
               className="text-white block mb-2"
@@ -100,7 +89,7 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Transformez vos idées en
+              Le digital, pensé pour 
             </motion.span>
             <motion.span 
               className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300 block"
@@ -108,7 +97,7 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              solutions digitales
+              votre croissance
             </motion.span>
           </motion.h1>
 
@@ -116,23 +105,22 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto px-4"
           >
-            Midigitale est votre partenaire stratégique pour réussir votre transformation digitale. 
-            De la conception à la réalisation, nous donnons vie à vos projets avec expertise et créativité.
+            Nous concevons des produits digitaux performants et sur mesure.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4"
           >
             <motion.a
               href="https://wa.me/2250711134106"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-gradient-primary text-white rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2 relative overflow-hidden group"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-primary text-white rounded-full font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 relative overflow-hidden group"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -146,7 +134,7 @@ export default function Hero() {
             </motion.a>
             <motion.a
               href="#projects"
-              className="px-8 py-4 bg-white text-primary-600 rounded-full font-semibold text-lg border-2 border-primary-600 hover:bg-primary-50 transition-all duration-300 relative overflow-hidden group"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white text-primary-600 rounded-full font-semibold text-base sm:text-lg border-2 border-primary-600 hover:bg-primary-50 transition-all duration-300 relative overflow-hidden group"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -159,12 +147,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-16 mb-12"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto mt-12 sm:mt-16 mb-8 sm:mb-12 px-4"
           >
             {[
-              { value: '50+', label: 'Projets réalisés', color: 'text-primary-500' },
-              { value: '98%', label: 'Clients satisfaits', color: 'text-primary-500' },
-              { value: '5+', label: "Années d'expérience", color: 'text-primary-500' },
+              { value: '50+', label: 'Projets réalisés', color: 'text-primary-400' },
+              { value: '98%', label: 'Clients satisfaits', color: 'text-primary-400' },
+              { value: '5+', label: "Années d'expérience", color: 'text-primary-400' },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -173,10 +161,10 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
                 className="text-center"
               >
-                <div className={`text-4xl md:text-5xl font-bold ${stat.color === 'text-primary-500' ? 'text-primary-400' : 'text-primary-400'} mb-2`}>
+                <div className={`text-3xl sm:text-4xl md:text-5xl font-bold ${stat.color} mb-1 sm:mb-2`}>
                   {stat.value}
                 </div>
-                <div className="text-white/80 font-medium">{stat.label}</div>
+                <div className="text-sm sm:text-base text-white/80 font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -185,7 +173,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="mt-8"
+            className="mt-8 mi-discovert_Btn"
           >
             <motion.a
               href="#about"

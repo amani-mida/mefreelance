@@ -6,10 +6,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const navItems = [
   { name: 'Accueil', href: '#home' },
+    { name: 'Réalisations', href: '#projects' },
   { name: 'À propos', href: '#about' },
   { name: 'Services', href: '#services' },
-  { name: 'Réalisations', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
+  { name: '', href: '#contact' },
 ]
 
 export default function Navbar() {
@@ -46,9 +46,9 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
           >
             <img
-              src="/images/logo/logo.png"
+              src="/images/logo/logo-o.png"
               alt="Midigitale"
-              className="h-20 w-auto"
+              className="h-12 sm:h-16 md:h-20 w-auto"
             />
           </motion.a>
 
@@ -72,7 +72,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Nous contacter
+              Demander un devis
             </motion.a>
           </div>
 
@@ -118,7 +118,7 @@ export default function Navbar() {
                 className="block px-6 py-2 bg-gradient-primary text-white rounded-full font-medium text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Nous contacter
+                Demander un devis
               </a>
             </div>
           </motion.div>

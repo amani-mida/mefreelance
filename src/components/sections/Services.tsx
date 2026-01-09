@@ -52,7 +52,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-24 bg-white relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-24 bg-white relative overflow-hidden"
       ref={ref}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,15 +62,15 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-dark-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-dark-900 px-4">
             Services qui propulsent votre croissance digitale
           </h2>
-          <p className="text-xl text-dark-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-dark-600 max-w-2xl mx-auto px-4">
             Des solutions complètes et innovantes pour transformer votre entreprise
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => {
             const Icon = service.icon
             // Utiliser uniquement la couleur primaire, plus sobre
@@ -89,22 +89,22 @@ export default function Services() {
                   stiffness: 100
                 }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className={`bg-white rounded-2xl p-8 shadow-lg card-hover border border-dark-200 ${borderHover} transition-all relative overflow-hidden group`}
+                className={`bg-white rounded-2xl p-6 sm:p-8 shadow-lg card-hover border border-dark-200 ${borderHover} transition-all relative overflow-hidden group`}
               >
                 {/* Bordure colorée subtile en haut - seulement au hover */}
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                 
                 <motion.div 
-                  className={`w-16 h-16 ${bgColor} rounded-xl flex items-center justify-center mb-6 relative z-10 group-hover:bg-primary-50 transition-colors duration-300`}
+                  className={`w-12 h-12 sm:w-16 sm:h-16 ${bgColor} rounded-xl flex items-center justify-center mb-4 sm:mb-6 relative z-10 group-hover:bg-primary-50 transition-colors duration-300`}
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Icon className={`${iconColor} group-hover:text-primary-600 transition-colors`} size={32} />
+                  <Icon className={`${iconColor} group-hover:text-primary-600 transition-colors`} size={24} />
                 </motion.div>
-                <h3 className="text-2xl font-bold mb-4 text-dark-900 relative z-10 group-hover:text-primary-600 transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-dark-900 relative z-10 group-hover:text-primary-600 transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-dark-600 mb-6 leading-relaxed relative z-10 text-base">
+                <p className="text-sm sm:text-base text-dark-600 mb-4 sm:mb-6 leading-relaxed relative z-10">
                   {service.description}
                 </p>
                 <ul className="space-y-2 relative z-10">

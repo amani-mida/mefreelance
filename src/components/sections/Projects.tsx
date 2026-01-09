@@ -219,15 +219,15 @@ function GalleryModal({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 bg-dark-900/95 flex items-center justify-center p-4"
+        className="fixed inset-0 z-50 bg-dark-900/95 flex items-center justify-center p-2 sm:p-4"
         onClick={onClose}
       >
         <div className="relative max-w-6xl max-h-[90vh] w-full">
           <button
             onClick={onClose}
-            className="absolute -top-12 right-0 text-white hover:text-primary-400 transition-colors z-10"
+            className="absolute -top-8 sm:-top-12 right-0 text-white hover:text-primary-400 transition-colors z-10 p-2"
           >
-            <X size={32} />
+            <X size={24} className="sm:w-8 sm:h-8" />
           </button>
 
           {selectedImage > 0 && (
@@ -236,9 +236,9 @@ function GalleryModal({
                 e.stopPropagation()
                 setSelectedImage(selectedImage - 1)
               }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors z-10"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-1.5 sm:p-2 rounded-full transition-colors z-10"
             >
-              <ChevronLeft size={24} />
+              <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
             </button>
           )}
 
@@ -248,9 +248,9 @@ function GalleryModal({
                 e.stopPropagation()
                 setSelectedImage(selectedImage + 1)
               }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors z-10"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-1.5 sm:p-2 rounded-full transition-colors z-10"
             >
-              <ChevronRight size={24} />
+              <ChevronRight size={20} className="sm:w-6 sm:h-6" />
             </button>
           )}
 
@@ -265,7 +265,7 @@ function GalleryModal({
             onClick={(e) => e.stopPropagation()}
           />
 
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm">
+          <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 text-white text-xs sm:text-sm bg-dark-900/50 px-3 py-1 rounded-full">
             {selectedImage + 1} / {images.length}
           </div>
         </div>
@@ -303,7 +303,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-24 bg-white relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-24 bg-white relative overflow-hidden"
       ref={ref}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -313,10 +313,10 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-dark-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-dark-900 px-4">
             Nos réalisations
           </h2>
-          <p className="text-xl text-dark-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-dark-600 max-w-2xl mx-auto px-4">
             Découvrez une sélection de nos projets récents réalisés pour nos clients
           </p>
         </motion.div>
@@ -326,9 +326,9 @@ export default function Projects() {
           initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center mb-12"
-        >
-          <div className="inline-flex bg-dark-100 rounded-full p-2 gap-2">
+          className="mi-tab_mobil flex justify-center mb-8 sm:mb-12 px-4"
+            >
+          <div className=" mi-tab_mobil-inner inline-flex bg-dark-100 rounded-full p-1.5 sm:p-2 gap-1 sm:gap-2 overflow-x-auto w-full sm:w-auto justify-center">
             {categories.map((category) => {
               const Icon = category.icon
               return (
@@ -336,8 +336,8 @@ export default function Projects() {
                   key={category.id}
                   onClick={() => setActiveTab(category.id)}
                   className={`
-                    relative px-6 py-3 rounded-full font-medium transition-all duration-300
-                    flex items-center gap-2
+                    relative px-3 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 text-sm sm:text-base
+                    flex items-center gap-1.5 sm:gap-2 whitespace-nowrap
                     ${
                       activeTab === category.id
                         ? 'text-white'
@@ -353,7 +353,7 @@ export default function Projects() {
                     />
                   )}
                   <Icon
-                    size={20}
+                    size={18}
                     className={`relative z-10 ${
                       activeTab === category.id ? 'text-white' : 'text-dark-600'
                     }`}
@@ -372,7 +372,7 @@ export default function Projects() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.4 }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {filteredProjects.map((project, index) => (
             <motion.div
@@ -383,7 +383,7 @@ export default function Projects() {
               className="group bg-white rounded-xl overflow-hidden shadow-lg card-hover"
             >
               {/* Image cliquable pour site actif ou galerie pour site en construction */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-40 sm:h-48 overflow-hidden">
                 {project.isActive && project.websiteUrl ? (
                   <a
                     href={project.websiteUrl}
@@ -391,15 +391,16 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="block w-full h-full"
                   >
-                    <div
+                <div
                       className="w-full h-full bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110 cursor-pointer"
                   style={{ backgroundImage: `url(${project.image})` }}
                 />
                     <div className="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-2 text-sm font-medium text-dark-900">
-                        <ExternalLink size={16} />
-                        Visiter le site
+                    <div className="absolute top-2 right-2 sm:top-3 sm:right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="bg-white/90 backdrop-blur-sm px-2 sm:px-3 py-1 sm:py-1.5 rounded-full flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium text-dark-900">
+                        <ExternalLink size={14} />
+                        <span className="hidden sm:inline">Visiter le site</span>
+                        <span className="sm:hidden">Visiter</span>
                       </div>
                     </div>
                   </a>
@@ -413,8 +414,8 @@ export default function Projects() {
                       style={{ backgroundImage: `url(${project.image})`, minHeight: '192px' }}
                     />
                     <div className="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="bg-orange-500/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium text-white">
+                    <div className="absolute top-2 right-2 sm:top-3 sm:right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="bg-orange-500/90 backdrop-blur-sm px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium text-white whitespace-nowrap">
                         {project.category === 'app-mobile' ? 'En construction' : (project.images && project.images.length > 0 ? 'Voir la galerie' : 'En construction')}
                       </div>
                     </div>
@@ -422,18 +423,18 @@ export default function Projects() {
                 )}
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-dark-900">
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-dark-900">
                   {project.title}
                 </h3>
-                <p className="text-sm text-dark-600 mb-4 line-clamp-3">
+                <p className="text-xs sm:text-sm text-dark-600 mb-3 sm:mb-4 line-clamp-3">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-xs font-medium"
+                      className="px-2 sm:px-3 py-0.5 sm:py-1 bg-primary-100 text-primary-700 rounded-full text-xs font-medium"
                     >
                       {tag}
                     </span>
@@ -449,10 +450,10 @@ export default function Projects() {
                   >
                     <Github size={18} />
                       Code
-                    </a>
+                  </a>
                   )}
                   {project.isActive && project.websiteUrl && (
-                    <a
+                  <a
                       href={project.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -482,7 +483,7 @@ export default function Projects() {
           initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-center py-12"
-          >
+        >
             <p className="text-dark-600 text-lg">
               Aucun projet dans cette catégorie pour le moment.
             </p>

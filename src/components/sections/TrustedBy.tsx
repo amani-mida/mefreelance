@@ -2,41 +2,21 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Building2, Briefcase, Globe, Store, Factory, ShoppingBag } from 'lucide-react'
 
-// Logos de clients/partenaires - vous pouvez remplacer par de vrais logos
+// Liste des partenaires/clients - vous pourrez ajouter de vrais logos plus tard
 const partners = [
-  {
-    name: 'TechStart',
-    icon: Building2,
-    category: 'Startup Tech',
-  },
-  {
-    name: 'Innovation Corp',
-    icon: Briefcase,
-    category: 'Entreprise',
-  },
-  {
-    name: 'Fashion Co',
-    icon: ShoppingBag,
-    category: 'E-commerce',
-  },
-  {
-    name: 'Global Solutions',
-    icon: Globe,
-    category: 'International',
-  },
-  {
-    name: 'Retail Plus',
-    icon: Store,
-    category: 'Commerce',
-  },
-  {
-    name: 'Industrial Pro',
-    icon: Factory,
-    category: 'Industrie',
-  },
+  { name: 'Partenaire 1', logo: '/images/logo/logo.png' },
+  { name: 'Partenaire 2', logo: '/images/logo/logo.png' },
+  { name: 'Partenaire 3', logo: '/images/logo/logo.png' },
+  { name: 'Partenaire 4', logo: '/images/logo/logo.png' },
+  { name: 'Partenaire 5', logo: '/images/logo/logo.png' },
+  { name: 'Partenaire 6', logo: '/images/logo/logo.png' },
+  { name: 'Partenaire 7', logo: '/images/logo/logo.png' },
+  { name: 'Partenaire 8', logo: '/images/logo/logo.png' },
 ]
+
+// Dupliquer les partenaires pour créer un effet de boucle infinie
+const duplicatedPartners = [...partners, ...partners, ...partners]
 
 export default function TrustedBy() {
   const [ref, inView] = useInView({
@@ -47,7 +27,7 @@ export default function TrustedBy() {
   return (
     <section
       id="trusted-by"
-      className="py-16 bg-white border-t border-b border-dark-200"
+      className="py-12 sm:py-16 bg-white border-t border-b border-dark-200 overflow-hidden"
       ref={ref}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,64 +35,55 @@ export default function TrustedBy() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="text-xl md:text-2xl font-bold mb-2 text-dark-900">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-dark-900 px-4">
             Ils nous font confiance
           </h2>
-          <p className="text-dark-600 max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-dark-600 max-w-xl mx-auto px-4">
             Des entreprises de tous secteurs nous font confiance pour leur transformation digitale
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
-          {partners.map((partner, index) => {
-            const Icon = partner.icon
-            return (
-              <motion.div
-                key={partner.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex flex-col items-center justify-center p-6 hover:bg-dark-50 rounded-xl transition-all duration-300 group cursor-pointer"
-              >
-                <div className="w-20 h-20 bg-dark-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-50 group-hover:scale-110 transition-all duration-300">
-                  <Icon className="text-dark-600 group-hover:text-primary-600 transition-colors" size={36} />
-                </div>
-                <div className="text-center">
-                  <div className="font-bold text-dark-900 text-sm mb-1">
-                    {partner.name}
-                  </div>
-                  <div className="text-xs text-dark-500">
-                    {partner.category}
-                  </div>
-                </div>
-              </motion.div>
-            )
-          })}
-        </div>
-
-        {/* Version alternative avec logos en ligne simple (sans icônes) */}
-        {/* Vous pouvez décommenter cette section et utiliser de vrais logos d'images */}
-        {/* 
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60 hover:opacity-100 transition-opacity">
-          {partners.map((partner, index) => (
+        {/* Carrousel */}
+        <div className="relative w-full overflow-hidden">
+          {/* Masque pour l'effet de fondu sur les bords */}
+          <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          
+          {/* Conteneur du carrousel */}
+          <div className="flex">
             <motion.div
-              key={partner.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="grayscale hover:grayscale-0 transition-all duration-300"
+              className="flex gap-8 sm:gap-12 md:gap-16"
+              animate={{
+                x: [0, -1600],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: 'loop',
+                  duration: 30,
+                  ease: 'linear',
+                },
+              }}
             >
-              <img
-                src={`/images/partners/${partner.logo}`}
-                alt={partner.name}
-                className="h-12 w-auto object-contain"
-              />
+              {duplicatedPartners.map((partner, index) => (
+                <div
+                  key={`${partner.name}-${index}`}
+                  className="flex-shrink-0 flex items-center justify-center px-4"
+                >
+                  <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="h-10 sm:h-12 md:h-16 w-auto object-contain"
+                    />
+                  </div>
+                </div>
+              ))}
             </motion.div>
-          ))}
+          </div>
         </div>
-        */}
       </div>
     </section>
   )

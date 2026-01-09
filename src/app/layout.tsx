@@ -11,15 +11,11 @@ export const metadata: Metadata = {
   keywords: 'agence digitale, création site web, application web, application mobile, développement web, Next.js, React, agence web',
   icons: {
     icon: [
-      { url: '/images/logo/favicon.png', sizes: 'any' },
-      { url: '/images/logo/favicon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/images/logo/favicon.png', sizes: '64x64', type: 'image/png' },
-      { url: '/images/logo/favicon.png', sizes: '96x96', type: 'image/png' },
-      { url: '/images/logo/favicon.png', sizes: '128x128', type: 'image/png' },
+      { url: '/images/logo/favi-o.png', sizes: '512x512', type: 'image/png' },
     ],
-    shortcut: '/images/logo/favicon.png',
+    shortcut: '/images/logo/favi-o.png',
     apple: [
-      { url: '/images/logo/favicon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/images/logo/favi-o.png', sizes: '512x512', type: 'image/png' },
     ],
   },
 }

@@ -143,5 +143,18 @@ html {
   .mi-mobile-padding{
     padding-top:100px!important;
   }
+
+  .mt-8.mi-discovert_Btn{
+    margin-bottom:20px!important;
+  }
+  .mi-tab_mobil{
+    padding-left:0!important;
+    padding-rigth:0!important;
+  }
+
+  .mi-tab_mobil-inner{
+    padding-left:50px!important;
+    border-radius:10px!important;
+  }
 }
 

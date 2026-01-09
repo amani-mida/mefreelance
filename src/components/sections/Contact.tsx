@@ -8,8 +8,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'contact@devportfolio.com',
-    href: 'mailto:contact@devportfolio.com',
+    value: 'contact@midigitale.com',
+    href: 'mailto:contact@midigitale.com',
   },
   {
     icon: Phone,
@@ -28,7 +28,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 text-white relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 text-white relative overflow-hidden"
       ref={ref}
     >
       {/* Grille subtile */}
@@ -40,10 +40,10 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-white px-4">
             Travaillons ensemble
           </h2>
-          <p className="text-xl text-dark-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-dark-300 max-w-2xl mx-auto px-4">
             Vous avez un projet digital ? Discutons de vos besoins et créons une solution
             sur mesure pour votre entreprise !
           </p>
@@ -53,10 +53,10 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-2xl mx-auto"
+          className="max-w-2xl mx-auto px-4 sm:px-0"
         >
-          <h3 className="text-2xl font-bold mb-6 text-center">Informations de contact</h3>
-          <p className="text-dark-300 mb-8 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center">Informations de contact</h3>
+          <p className="text-sm sm:text-base text-dark-300 mb-6 sm:mb-8 text-center">
             N'hésitez pas à nous contacter pour discuter de votre projet ou
             demander un devis. Nous répondons généralement sous 24h.
           </p>
@@ -71,14 +71,14 @@ export default function Contact() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                  className="flex items-center gap-4 p-4 bg-dark-800/50 rounded-lg hover:bg-dark-800 transition-colors group"
+                  className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-dark-800/50 rounded-lg hover:bg-dark-800 transition-colors group"
                 >
-                  <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center group-hover:bg-primary-500 transition-colors">
-                    <Icon size={24} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-600 rounded-lg flex items-center justify-center group-hover:bg-primary-500 transition-colors flex-shrink-0">
+                    <Icon size={20} />
                   </div>
-                  <div>
-                    <p className="text-sm text-dark-400">{info.label}</p>
-                    <p className="font-medium">{info.value}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs sm:text-sm text-dark-400">{info.label}</p>
+                    <p className="font-medium text-sm sm:text-base truncate">{info.value}</p>
                   </div>
                 </motion.a>
               )

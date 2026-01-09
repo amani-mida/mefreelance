@@ -60,7 +60,7 @@ export default function Pricing() {
   return (
     <section
       id="pricing"
-      className="py-24 bg-white relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-24 bg-white relative overflow-hidden"
       ref={ref}
     >
       {/* Décoration de fond */}
@@ -78,15 +78,15 @@ export default function Pricing() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-dark-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-dark-900 px-4">
             Des formules adaptées à vos besoins
           </h2>
-          <p className="text-xl text-dark-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-dark-600 max-w-2xl mx-auto px-4">
             Choisissez la formule qui correspond le mieux à votre projet digital
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto px-4 sm:px-0">
           {pricingPlans.map((plan, index) => {
             const bgColor = 'bg-primary-500'
             const borderColor = 'border-primary-500'
@@ -104,9 +104,9 @@ export default function Pricing() {
                   stiffness: 100
                 }}
                 whileHover={{ y: -12, scale: 1.02 }}
-                className={`relative bg-white rounded-3xl p-8 shadow-xl border-2 ${
+                className={`relative bg-white rounded-3xl p-6 sm:p-8 shadow-xl border-2 ${
                   plan.popular 
-                    ? `${borderColor} border-2 shadow-2xl scale-105` 
+                    ? `${borderColor} border-2 shadow-2xl lg:scale-105` 
                     : 'border-dark-100'
                 } transition-all duration-300 overflow-hidden group`}
               >
@@ -121,14 +121,14 @@ export default function Pricing() {
                 <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/0 to-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div className="relative z-10">
-                  <div className="mb-6">
-                    <h3 className={`text-2xl font-bold mb-2 ${textColor}`}>
+                  <div className="mb-4 sm:mb-6">
+                    <h3 className={`text-xl sm:text-2xl font-bold mb-2 ${textColor}`}>
                       {plan.name}
                     </h3>
-                    <div className="mb-4">
-                      <span className="text-3xl font-bold text-dark-900">{plan.price}</span>
+                    <div className="mb-3 sm:mb-4">
+                      <span className="text-2xl sm:text-3xl font-bold text-dark-900">{plan.price}</span>
                     </div>
-                    <p className="text-dark-600 text-sm">
+                    <p className="text-sm text-dark-600">
                       {plan.description}
                     </p>
                   </div>
@@ -177,18 +177,18 @@ export default function Pricing() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <div className="bg-primary-50 rounded-3xl p-8 md:p-12 border border-primary-100">
-            <h3 className="text-3xl font-bold mb-4 text-dark-900">
+          <div className="bg-primary-50 rounded-3xl p-6 sm:p-8 md:p-12 border border-primary-100 mx-4 sm:mx-0">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-dark-900">
               Un projet en tête ?
             </h3>
-            <p className="text-xl text-dark-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-dark-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
               Discutons de vos besoins et trouvons la solution parfaite ensemble
             </p>
             <motion.a
               href="https://wa.me/2250711134106"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-primary-500 text-white rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-primary-500 text-white rounded-full font-semibold text-sm sm:text-base md:text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
