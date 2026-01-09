@@ -1,8 +1,8 @@
 import { Linkedin, Twitter, Facebook } from 'lucide-react'
 
 const socialLinks = [
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/amani-mida', label: 'LinkedIn' },
-  { icon: Facebook, href: '#', label: 'Facebook' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/mi-digitale/', label: 'LinkedIn' },
+  { icon: Facebook, href: 'https://www.facebook.com/share/171pzmrKab/', label: 'Facebook' },
   { icon: Twitter, href: '#', label: 'Twitter' },
 ]
 
